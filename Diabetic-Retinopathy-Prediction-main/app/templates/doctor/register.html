@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER FORM</title>
+    <!-- Stylesheets -->
+    <link href="static/assets/css/images/bootstrap.css" rel="stylesheet">
+    <link href="static/assets/css/images/style.css" rel="stylesheet">
+    <!-- Responsive File -->
+    <link href="static/assets/css/images/responsive.css" rel="stylesheet">
+    <!-- Color File -->
+    <link href="static/assets/css/images/color.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="static/assets/images/logo.png" type="image/x-icon">
+    <link rel="icon" href="static/assets/images/logo.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <style>
+    /* Login page stylesheet */
+    body{
+      background-color: rgb(40, 40, 40);
+    }
+    .login-container
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        border-radius: 20px;
+    }
+    .registerForm
+    {
+        width:70vw;
+        display: flex;
+        gap: 2rem;
+        background-color: #ffffff;
+        margin: auto;
+        border-radius: 20px;
+    }
+    .registerForm .image
+    {
+        width: 40%;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #cad6ff;
+        padding-inline: 3rem;
+    }
+    .registerForm .image img
+    {
+        width: 100%;
+        border-radius: 20px;
+    }
+    .registerData
+    {
+        padding: 2rem 4rem;
+    }
+    .registerData h2
+    {
+        font-size: 30px;
+        font-weight: 700 !important;
+    }
+    .registerData form
+    {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+    .registerData input
+    {
+        padding: .5rem 2rem;
+        margin-block: .5rem;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+    .registerData input::-webkit-input-placeholder {
+        color: black; /*Change the placeholder color*/
+        opacity: 0.5; /*Change the opacity between 0 and 1*/
+    }
+    .buttons-div
+    {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .create-account
+    {
+        margin-top: 1rem;
+    }
+    .create-account a
+    {
+        padding-left: 1rem;
+    }
+    h4
+    {
+      font-size: 30px;
+    }
+
+  </style>
+</head>
+
+<body>
+    <div class="login-container">
+      <div class="registerForm">
+        <div class="image">
+          <img src="static/assets/icon/eye-test.png" alt="">
+        </div>
+        <div class="registerData">
+          <div class="logo-box" style="padding-block:1rem">
+                        <div class="logo"><a href=""><img src="static/assets/images/logo.png" style = "width:200px" alt=""></a></div>
+        </div>
+          <h4>Welcome to Care Plus</h4>
+          <h5>Create an account</h5>
+          <form action="/register_doc_post" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" id="textfield" placeholder="Full Name" pattern="[Aa-Zz]{3,25}" required/>
+            <input type="file" name="image" id="textfield" placeholder="Profile Picture" accept="image/png, image/jpeg" required/>
+            <input type="email" name="email" id="textfield" placeholder="Email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+            <input type="text" name="phone" id="textfield" placeholder="Phone Number" pattern="[6789][0-9]{9}"required/>
+            <input type="text" name="password" id="textfield" placeholder="Password"  required/>
+            <input type="file" name="qualification" id="textfield" placeholder="Qualification" accept="application/pdf" required />
+            <input type="password" name="cpassword" id="textfield2" placeholder="Confirm Password"  required/>
+              <div id="gmap">
+
+              </div>
+            <div class="buttons-div">
+              <input type="submit" class="button btn-style-one" name="button" id="button" value="Sign Up" />
+              
+            </div>
+            <div class="create-account">
+              <p>Already have an account? <a href="/login">Log in</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

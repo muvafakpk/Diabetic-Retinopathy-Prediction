@@ -1,0 +1,29 @@
+body
+{
+    background-color: #1E1E1E;
+    height: 100vh;
+}
+
+.admin_container h1, h2, h3, h4, h5, h6
+{
+    color: white !important;
+}
+.admin-container
+{
+    display: flex;
+    justify-content: center;
+}
+.admin-panel
+{
+    width:70%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin: auto;
+    flex-direction: column;
+}
+.admin_container header
+{
+    display: flex;
+    gap:4rem;
+}

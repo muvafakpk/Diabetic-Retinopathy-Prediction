@@ -1,0 +1,468 @@
+{#{% extends 'admin/adminindex.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<h2>complaints</h2>#}
+{#<table width="200" border="1">#}
+{#  <tr>#}
+{#    <th scope="col">slno</th>#}
+{#    <th scope="col">profile</th>#}
+{#    <th scope="col">name</th>#}
+{#    <th scope="col">email</th>#}
+{#    <th scope="col">phn no</th>#}
+{#    <th scope="col">location</th>#}
+{#    <th scope="col">complaint</th>#}
+{#    <th scope="col">complaint date</th>#}
+{#    <th scope="col">reply</th>#}
+{#    <th scope="col">reply date</th>#}
+{#  </tr>#}
+{#    {% for i in data %}#}
+{#  <tr>#}
+{#    <td>{{ forloop.counter }}</td>#}
+{#    <td><img src="{{ i.image }}" height="100" width="100"></td>#}
+{#        <td>{{ i.USER.name }}</td>#}
+{#    <td>{{i.USER.email }}</td>#}
+{#    <td>{{ i.USER.phone_no }}&nbsp;</td>#}
+{#    <td><a href="">track</a>&nbsp;</td>#}
+{#    <td>{{i.complaint }}</td>#}
+{#    <td>{{ i.complaint_date }}&nbsp;</td>#}
+{##}
+{#        {% if i.reply == 'pending' %}#}
+{#            <td colspan="2"><P><a href="/replycomplaint/{{ i.id }}">Reply</a></P></td>#}
+{#        <td colspan="2"><a href="/replycomplaint/{{ i.id }}">Reply</a></td>#}
+{#        {% else %}#}
+{#    <td>{{ i.reply_date }}</td>#}
+{#          <td>{{ i.reply }}&nbsp;</td>#}
+{#        {% endif %}#}
+{#      {% endfor %}#}
+{#  </tr>#}
+{# #}
+{#</table>#}
+{##}
+{#</body>#}
+{#</html>#}
+{##}
+{#{% endblock %}#}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Care Plus</title>
+<!-- Stylesheets -->
+<link href="static/assets/css/images/bootstrap.css" rel="stylesheet">
+<link href="static/assets/css/images/style.css" rel="stylesheet">
+<!-- Responsive File -->
+<link href="static/assets/css/images/responsive.css" rel="stylesheet">
+<!-- Color File -->
+<link href="static/assets/css/images/color.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="static/assets/images/logo.png" type="image/x-icon">
+<link rel="icon" href="static/assets/images/logo.png" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  .formbold-mb-3 {
+    margin-bottom: 15px;
+  }
+  .formbold-relative {
+    position: relative;
+  }
+  .formbold-opacity-0 {
+    opacity: 0;
+  }
+  .formbold-stroke-current {
+    stroke: #ffffff;
+    z-index: 999;
+  }
+  #supportCheckbox:checked ~ div span {
+    opacity: 1;
+  }
+  #supportCheckbox:checked ~ div {
+    background: #6a64f1;
+    border-color: #6a64f1;
+  }
+
+  .formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+  }
+
+  .formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+    background: white;
+    padding: 40px;
+  }
+
+  .formbold-img {
+    display: block;
+    margin: 0 auto 45px;
+  }
+
+  .formbold-input-wrapp > div {
+    display: flex;
+    gap: 20px;
+  }
+
+  .formbold-input-flex {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  .formbold-input-flex > div {
+    width: 50%;
+  }
+  .formbold-form-input {
+    width: 100%;
+    padding: 13px 22px;
+    border-radius: 5px;
+    border: 1px solid #dde3ec;
+    background: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    color: #536387;
+    outline: none;
+    resize: none;
+  }
+  .formbold-form-input::placeholder,
+  select.formbold-form-input,
+  .formbold-form-input[type='date']::-webkit-datetime-edit-text,
+  .formbold-form-input[type='date']::-webkit-datetime-edit-month-field,
+  .formbold-form-input[type='date']::-webkit-datetime-edit-day-field,
+  .formbold-form-input[type='date']::-webkit-datetime-edit-year-field {
+    color: rgba(83, 99, 135, 0.5);
+  }
+
+  .formbold-form-input:focus {
+    border-color: #6a64f1;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+  .formbold-form-label {
+    color: #536387;
+    font-size: 14px;
+    line-height: 24px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .formbold-checkbox-label {
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    line-height: 24px;
+    color: #536387;
+  }
+  .formbold-checkbox-label a {
+    margin-left: 5px;
+    color: #6a64f1;
+  }
+  .formbold-input-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .formbold-checkbox-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+    margin-top: 2px;
+    border: 0.7px solid #dde3ec;
+    border-radius: 3px;
+  }
+
+  .formbold-form-file {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(83, 99, 135, 0.5);
+  }
+  .formbold-form-file::-webkit-file-upload-button {
+    display: none;
+  }
+  .formbold-form-file:before {
+    content: 'Upload';
+    display: inline-block;
+    background: #EEEEEE;
+    border: 0.5px solid #E7E7E7;
+    border-radius: 3px;
+    padding: 3px 12px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    color: #637381;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 10px;
+  }
+
+  .formbold-btn {
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 14px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #6a64f1;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+  }
+  .formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .formbold-w-45 {
+    width: 45%;
+  }
+{#        Schedule syle#}
+   .schedule_table
+   {
+       Display:flex;
+       flex-direction: column;
+       width: 100%;
+   }
+   .schedule_table h2
+   {
+       padding-block:2rem;
+   }
+    .schedule_table table
+    {
+        border: 1px solid black;
+    }
+    thead
+    {
+        background-color:#1492cd;
+        color: white;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+
+
+        <!-- Header Upper -->
+        <!-- Header Upper -->
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <!--Logo-->
+                    <div class="logo-box">
+                        <div class="logo"><a href="/admin_homepage"><img src="static/assets/icon/adminhome.png" style = "width:100px" alt=""></a></div>
+                    </div>
+
+                    <div class="link-btn"><a href="/" class="theme-btn btn-style-one"><span>Log Out</span></a></div>
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <!--Logo-->
+                        <div class="logo-box">
+{#                            <div class="logo"><a href=""><img src="static/assets/images/logo.svg" alt=""></a></div>#}
+                            <h2>Logo</h2>
+                        </div>
+                        <!--Nav Box-->
+                        <div class="nav-outer">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler"><img src="static/assets/images/icons/icon-bar-2.png" alt=""></div>
+
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                            </nav>
+                        </div>
+                        <div class="link-btn"><a href="" class="theme-btn btn-style-one"><span>Log Out</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Sticky Menu -->
+
+
+
+        <div class="nav-overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div>
+    </header>
+    <!-- End Main Header -->
+
+
+    <!-- Page Title -->
+
+
+    <!-- Services Details -->
+    <section class="service-details">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-8 order-lg-2">
+
+
+                    <div class="formbold-main-wrapper">
+
+  <div class="formbold-form-wrapper">
+      <div class="schedule_table">
+  <h2>complaints</h2>
+<table width="200" border="1" class="table">
+<thead>
+  <tr>
+    <th scope="col">slno</th>
+    <th scope="col">profile</th>
+    <th scope="col">name</th>
+    <th scope="col">email</th>
+    <th scope="col">phn no</th>
+    <th scope="col">location</th>
+    <th scope="col">complaint</th>
+    <th scope="col">complaint date</th>
+    <th scope="col">reply</th>
+    <th scope="col">reply date</th>
+  </tr>
+  </thead>
+    {% for i in data %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td><img src="{{ i.image }}" height="100" width="100"></td>
+        <td>{{ i.USER.name }}</td>
+    <td>{{i.USER.email }}</td>
+    <td>{{ i.USER.phone_no }}&nbsp;</td>
+    <td><a href="">track</a>&nbsp;</td>
+    <td>{{i.complaint }}</td>
+    <td>{{ i.complaint_date }}&nbsp;</td>
+
+        {% if i.reply == 'pending' %}
+            <td colspan="2"><P><a href="/replycomplaint/{{ i.id }}">Reply</a></P></td>
+        <td colspan="2"><a href="/replycomplaint/{{ i.id }}">Reply</a></td>
+        {% else %}
+    <td>{{ i.reply_date }}</td>
+          <td>{{ i.reply }}&nbsp;</td>
+        {% endif %}
+      {% endfor %}
+  </tr>
+
+</table>
+
+    </div>
+  </div>
+</div>
+
+
+                </div>
+
+                <div class="col-lg-4 sidebar-side left-sidebar">
+                    <aside class="sidebar">
+
+                        <!-- Category Widget -->
+                        <div class="sidebar-widget categories">
+                            <h3 class="sidebar-title">Options</h3>
+                            <div class="widget-content">
+                                <ul class="list">
+                                    <li  ><a href="/admin_homepage">Home</a></li>
+                                    <li ><a href="/change_password">Change Password</a></li>
+                                    <li ><a href="/Admin_approval">Doctor Approval</a></li>
+                                    <li ><a href="Approved_Docs">Approved Doctors</a></li>
+                                    <li><a href="view_users">View Users</a></li>
+                                    <li><a href="view_complaints">User Complaints</a></li>
+                                    <li><a href="review">User Review</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <div class="footer-bottom">
+        <div class="auto-container">
+            <div class="content">
+                <p>Copyright © Care Plus</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--End pagewrapper-->
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-right-arrow-4"></span></div>
+
+<script src="static/assets/js/jquery.js"></script>
+<script src="static/assets/js/popper.min.js"></script>
+<script src="static/assets/js/bootstrap.min.js"></script>
+<script src="static/assets/js/bootstrap-select.min.js"></script>
+<script src="static/assets/js/jquery.fancybox.js"></script>
+<script src="static/assets/js/isotope.js"></script>
+<script src="static/assets/js/owl.js"></script>
+<script src="static/assets/js/appear.js"></script>
+<script src="static/assets/js/wow.js"></script>
+<script src="astatic/ssets/js/lazyload.js"></script>
+<script src="astatic/ssets/js/scrollbar.js"></script>
+<script src="static/assets/js/TweenMax.min.js"></script>
+<script src="static/assets/js/swiper.min.js"></script>
+<script src="static/assets/js/jquery.polyglot.language.switcher.js"></script>
+<script src="static/assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="static/assets/js/parallax-scroll.js"></script>
+
+<script src="static/assets/js/script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Care Plus</title>
+<!-- Stylesheets -->
+<link href="static/assets/css/images/bootstrap.css" rel="stylesheet">
+<link href="static/assets/css/images/style.css" rel="stylesheet">
+<!-- Responsive File -->
+<link href="static/assets/css/images/responsive.css" rel="stylesheet">
+<!-- Color File -->
+<link href="static/assets/css/images/color.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="static/assets/css/images/logo.png" type="image/x-icon">
+<link rel="icon" href="static/assets/css/images/logo.png" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+        <!-- Header Top -->
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <div class="left-column">
+                        <li><a href="tel:6235666958"><i class="flaticon-call"></i> 623-566-6958</a></li>                        
+                    </div>
+                    <div class="right-column">
+                        <ul class="contact-info">
+                            <li><a href="mailto:careplus@example.com"><i class="flaticon-email-1"></i>careplus@example.com </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Upper -->
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <!--Logo-->
+                    <div class="logo-box">
+                        <div class="logo"><a href=""><img src="static/assets/images/logo.png" style = "width:100px" alt=""></a></div>
+                    </div>
+                    <!--Nav Box-->
+                    <div class="nav-outer">
+                        <!--Mobile Navigation Toggler-->
+                        <div class="mobile-nav-toggler"><img src="static/assets/images/logo.png" alt=""></div>
+
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-md navbar-light">
+                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                <ul class="navigation">
+                                    <li class="dropdown"><a href="">Home</a>
+                                    </li>
+                                    <li><a href="">About Us</a></li>
+                                    <li class="dropdown"><a href="">Services</a></li>
+                                    <li class="dropdown"><a href="">Insurance</a></li>
+                                    <li class="dropdown"><a href="{% url 'upload_image'%}">Training</a></li>
+                                    <li><a href="">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="link-btn"><a href="/login" class="theme-btn btn-style-one"><span>Sign in</span></a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <!--Logo-->
+                        <div class="logo-box">
+                            <div class="logo"><a href="index.html"><img src="static/assets/images/logo.png" tyle = "width:200px" alt=""></a></div>
+                        </div>
+                        <!--Nav Box-->
+                        <div class="nav-outer">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler"><img src="static/assets/images/app_logo2.png" alt=""></div>
+    
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                            </nav>
+                        </div>
+                        <div class="link-btn"><a href="/login" class="theme-btn btn-style-one"><span>Sign In</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Sticky Menu -->
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-remove"></span></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="static/assets/images/logo.png" tyle = "width:200px" alt="" title=""></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+				<!--Social Links-->
+				<div class="social-links"></div>
+            </nav>
+        </div><!-- End Mobile Menu -->
+
+        <div class="nav-overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div>
+    </header>
+    <!-- End Main Header -->
+
+    <!--Search Popup-->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search theme-btn"><span class="flaticon-remove"></span></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
+                            <input type="submit" value="Search Now!" class="theme-btn">
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bnner Section -->
+    <section class="banner-section style-three">
+        <div class="swiper-container banner-slider">
+            <div class="swiper-wrapper">
+                <!-- Slide Item -->
+                <div class="swiper-slide" style="background-image: url(static/assets/images/wallpaper.jpg);">     
+                    <div class="content-outer">
+                        <div class="content-box justify-content-center">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- End Bnner Section -->
+
+    <!-- Contact Info section -->
+    <section class="contact-info-section">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-3 info-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="icon"><span class="flaticon-call"></span></div>
+                        <div class="content text-center">
+                            <h5>Consultation</h5>
+                            <h4><a href="">623-566-6958</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 info-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="icon"><span class="flaticon-placeholder"></span></div>
+                        <div class="content text-center">
+                            <h5>Coverage Area</h5>
+                            <h4><a href=""> Find Our Location</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 info-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="icon"><span class="fas fa-calendar"></span></div>
+                        <div class="content text-center">
+                            <h5>Awareness Camps</h5>
+                            <h4><a href=""> Get Involved</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 info-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="icon"><span class="fas fa-graduation-cap"></span></div>
+                        <div class="content text-center">
+                            <h5>Education</h5>
+                            <h4><a href="">Training</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section two -->
+    <section class="about-us-section-two">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="content-block wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="sec-title mb-20">
+                            <div class="sub-title">About Us</div>
+                            <h2>Empowering Diabetic Retinopathy Prediction: Advanced Software for Personalized Care</h2>
+                        </div>
+                        <div class="text">Diabetic Retinopathy (DR) is one of the leading causes of vision impairment and blindness among individuals with diabetes. However, with early detection and timely intervention, its devastating impact can be significantly minimized. By leveraging cutting-edge technologies such as artificial intelligence (AI), machine learning, and precision diagnostic tools, we empower a more accurate, efficient, and timely prediction of DR. These advanced systems analyze retinal images to detect even the smallest abnormalities, providing actionable insights for both patients and healthcare providers. Proactive management becomes achievable as these tools help identify high-risk cases early, allowing for timely treatments that can protect and preserve vision. Through this innovative approach, we bridge the gap between detection and prevention, making critical care accessible to more people and fostering improved health outcomes. Together, we envision a future where technology transforms how we combat DR and enhances the quality of life for diabetic patients worldwide.
+                        </div>
+                        <div class="link-btn"><a href="" class="theme-btn btn-style-one"><span>View More</span></a></div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="image-wrapper wow fadeInDown" data-wow-duration="1500ms"> 
+                        <div class="image">
+                            <img src="static/assets/images/app_logo2.png" alt="" style="border-radius: 20px; padding-top: 1rem;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team section -->
+    <section class="team-section">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="sub-title">Our Team</div>
+                <h2>Our Best Doctors</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 team-blcok">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="image">
+                            <img src="static/doctor_photos/anjali.jpg" alt="">
+                            <div class="overlay">
+                                <ul class="social-icon">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>Dr. Anjali Menon</h4>
+                            <div class="designation">Senior Consultant</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 team-blcok">
+                    <div class="inner-box wow fadeInDown" data-wow-duration="1500ms">
+                        <div class="image">
+                            <img src="static/doctor_photos/rajesh.jpg" alt="">
+                            <div class="overlay">
+                                <ul class="social-icon">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>Dr. Rajesh Sharma</h4>
+                            <div class="designation">Consultant</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 team-blcok">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="image">
+                            <img src="static/doctor_photos/sarah.jpg" alt="">
+                            <div class="overlay">
+                                <ul class="social-icon">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>Dr. Sarah Jacob</h4>
+                            <div class="designation">Consultant</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 team-blcok">
+                    <div class="inner-box wow fadeInDown" data-wow-duration="1500ms">
+                        <div class="image">
+                            <img src="static/doctor_photos/michael.jpg" alt="">
+                            <div class="overlay">
+                                <ul class="social-icon">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lower-content">
+                            <h4>Dr. Michael D'Souza</h4>
+                            <div class="designation">Consultant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section Two -->
+    <section class="testimonials-section-two">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="sub-title">Testimonials</div>
+                <h2>Happy Patients</h2>
+            </div>
+            <div class="theme_carousel owl-theme owl-carousel" data-options='{"loop": true, "margin": 40, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 1000, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "1" }, "768" :{ "items" : "2" } , "992":{ "items" : "2" }, "1200":{ "items" : "3" }}}'>
+                <div class="testimonial-block-two">
+                    <div class="inner-box">
+                        <div class="rating">
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                        </div>                                  
+                        <div class="text">Uploading images and getting results was quick and seamless.</div>
+                        
+                        <div class="author-info">
+                            <h4>Jasim V</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-block-two">
+                    <div class="inner-box">
+                        <div class="rating">
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                        </div>                                  
+                        <div class="text">
+                            I appreciate being able to monitor my eye health at home.
+                        </div>
+                        
+                        <div class="author-info">
+                            <h4>Mubashir M</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-block-two">
+                    <div class="inner-box">
+                        <div class="rating">
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                        </div>                                  
+                        <div class="text">The prediction accuracy is impressive and matches my doctor's diagnosis.</div>
+                        
+                        <div class="author-info">
+                            <h4>Sabith Razak
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-block-two">
+                    <div class="inner-box">
+                        <div class="rating">
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                            <span class="fas fa-star"></span>
+                        </div>                                  
+                        <div class="text">The app interface is very user-friendly and straightforward to navigate.</div>
+                        
+                        <div class="author-info">
+                            <h4>Muwafak PK
+                            </h4>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!--Main Footer-->
+    <!--Main Footer-->
+    <footer class="main-footer">
+        <div class="upper-box">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-7" style="display: flex; justify-content: center;
+                    align-items: center;">
+                        <img src="static/assets/images/logo.png" alt="" width="200" >
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="widget links-widget">
+                            <h4 class="widget_title">Usefull Link</h4>
+                            <div class="widget-content">
+                                <ul class="list">
+                                    <li><a href="">About Us </a></li>
+                                    <li><a href="">Services</a></li>
+                                    
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="">Insurance </a></li>
+                                    <li><a href="">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="widget links-widget">
+                            <h4 class="widget_title">Links</h4>
+                            <div class="widget-content">
+                                <ul class="list">
+                                    <li><a href="">Locations </a></li>
+                                    <li><a href="">Education & Training</a></li>
+                                    <li><a href="">SSF </a></li>
+                                    <li><a href="">Our Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1 col-md-6">
+                        <div class="widget contact-widget">
+                            <h4 class="widget_title">Contact</h4>
+                            <ul>
+                                <li>Athinhal, Opp. Kailas theatre,
+                                    Near Bus stand,Kanhagad, Kasaragod,Kerala,
+                                    India – 671314</li>
+                                <li><a href="mailto:careplus@gmail.com">careplus@gmail.com</a></li>
+                                <li><a href="tel:918-856-1822">918-856-1822</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>               
+    </footer>
+    <!--End Main Footer-->
+
+    <div class="footer-bottom">
+        <div class="auto-container">
+            <div class="content">
+                <p>Copyright © 2025 Care Plus.</p>
+            </div>            
+        </div>
+    </div>
+	
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-right-arrow-4"></span></div>
+
+<script src="../myapp/static/assets/js/jquery.js"></script>
+<script src="../myapp/static/../myapp/static/assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="../myapp/static/assets/js/bootstrap-select.min.js"></script>
+<script src="../myapp/static/assets/js/jquery.fancybox.js"></script>
+<script src="../myapp/static/assets/js/isotope.js"></script>
+<script src="../myapp/static/assets/js/owl.js"></script>
+<script src="../myapp/static/assets/js/appear.js"></script>
+<script src="../myapp/static/assets/js/wow.js"></script>
+<script src="../myapp/static/assets/js/lazyload.js"></script>
+<script src="../myapp/static/assets/js/scrollbar.js"></script>
+<script src="../myapp/static/assets/js/TweenMax.min.js"></script>
+<script src="../myapp/static/assets/js/swiper.min.js"></script>
+<script src="../myapp/static/assets/js/jquery.polyglot.language.switcher.js"></script>
+<script src="../myapp/static/assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="../myapp/static/assets/js/parallax-scroll.js"></script>
+
+<script src="../myapp/static/assets/js/script.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Admin Login</title>
+</head>
+<!-- Stylesheets -->
+<link href="static/assets/css/images/bootstrap.css" rel="stylesheet">
+<link href="static/assets/css/images/style.css" rel="stylesheet">
+<!-- Responsive File -->
+<link href="static/assets/css/images/responsive.css" rel="stylesheet">
+<!-- Color File -->
+<link href="static/assets/css/images/color.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="static/assets/images/logo.png" type="image/x-icon">
+<link rel="icon" href="static/assets/images/logo.png" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<body>
+<div class="login-container">
+  <div class="login">
+    <div class="image">
+      <img src="static/assets/images/create.png" alt="" style="padding-top: 5rem">
+    </div>
+    <div class="formDiv">
+{#        {% load static %}#}
+        <div class="logo-box" style="padding-block:2rem">
+          <div class="logo">
+            <a href="">
+                <img src="static/assets/images/logo.png" style="width:200px; height:auto; display: block; margin: 0 auto;" alt="">
+            </a></div>
+      <h2>Login to your account</h2>
+      <form id="form1" name="form1" method="post" action="login_post">
+        {% csrf_token %}
+      
+        <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required name="textfield" id="textfield" placeholder="username"/>
+        <input type="password" name="textfield2" id="textfield2" placeholder="password" />
+        <div class="buttons-div">
+          <input type="submit" class="button btn-style-one" name="button" id="button" value="Login" />
+          <a href="/forget_password">Forgot password?</a>
+        </div>
+        <div class="create-account">
+          <p>Don't have an account? <a href="/register_doc">Create an Account</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
